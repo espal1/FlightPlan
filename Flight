@@ -1,0 +1,30 @@
+from djitellopy import Tello
+from time import sleep
+
+
+ft = 30.48
+
+tello = Tello()
+tello.connect()
+
+# takeoff to 32in
+tello.takeoff()
+
+tello.move_up(101)
+tello.move_forward(round(5*ft))
+sleep(1.5)
+tello.rotate_counter_clockwise(90)
+tello.move_forward(round(6*ft))
+sleep(1.5)
+tello.rotate_clockwise(90)
+tello.move_down(round(3*ft))
+tello.move_forward(round(3*ft))
+sleep(1.5)
+tello.rotate_clockwise(90)
+tello.move_up(round(1*ft))
+tello.move_forward(round(3*ft))
+sleep(1.5)
+tello.rotate_counter_clockwise(90)
+tello.move_forward(round(6*ft))
+sleep(1.5)
+tello.land
